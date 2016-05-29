@@ -31,13 +31,12 @@ class ServiceASpec extends PlaySpec with Results with OneAppPerSuite {
       }
     }
 
-    "render the home page" in {
+    "render the greeting page" in {
       //val url = controllers.routes.serviceA.ServiceAController().url
-      route(app, FakeRequest(GET, "/a")).foreach { result => // fails with status 404, why?
-        status(result) mustBe OK
-        contentType(result) mustBe Some("text/html")
-        contentAsString(result) must include ("Hello there")
-      }
+      val result = controller.greet("Chloe").apply(FakeRequest())  // fails with status 404, why?
+      status(result) mustBe OK
+      contentType(result) mustBe Some("text/html")
+      contentAsString(result) must include ("Hello Chloe")
     }
 
     "respond to serviceA specific requests" in {
