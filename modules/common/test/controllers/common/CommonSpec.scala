@@ -1,10 +1,10 @@
 package controllers.common
 
-import org.scalatestplus.play._
-import play.api.test._
-import play.api.test.Helpers._
 import java.io.File
+import org.scalatestplus.play._
 import play.api.mvc.Results
+import play.api.test.Helpers._
+import play.api.test._
 
 class CommonSpec extends PlaySpec with Results with OneAppPerSuite {
   val modulePath = new File("./modules/common/")

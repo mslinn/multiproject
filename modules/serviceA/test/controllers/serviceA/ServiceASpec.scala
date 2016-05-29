@@ -2,10 +2,9 @@ package controllers.serviceA
 
 import java.io.File
 import org.scalatestplus.play._
-import play.api.mvc.Results
-import play.api.test._
+import play.api.mvc.{Result, Results}
 import play.api.test.Helpers._
-import play.api.mvc.Result
+import play.api.test._
 import scala.concurrent.Future
 
 class ServiceASpec extends PlaySpec with Results with OneAppPerSuite {
