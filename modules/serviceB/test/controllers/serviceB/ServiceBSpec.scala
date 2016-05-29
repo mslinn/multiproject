@@ -6,29 +6,27 @@ import play.api.mvc._
 import play.api.test.Helpers._
 import play.api.test._
 
-class ServiceBSpec extends PlaySpec with Results {
+class ServiceBSpec extends PlaySpec with Results with OneAppPerSuite {
   val modulePath = new File("./modules/serviceB/")
 
   "ServiceBSpec" should {
-    "send 404 on a bad request" in {
-      running(FakeApplication(path = modulePath)) {
-        route(FakeRequest(GET, "/boum")) match {
-          case Some(result) => status(result) mustBe NOT_FOUND
-          case None => fail("No response")
-        }
+    "respond to valid requests" in {
+      route(app, FakeRequest(GET, "/b/serviceB")).foreach { result =>
+        status(result) must equal(OK) // not sure why this fails with status 404
+        contentAsString(result) must include ("This is serviceB")
       }
     }
 
-    "respond to serviceB specific requests" in {
-      running(FakeApplication(path = modulePath)) {
-        route(FakeRequest(GET, "/b/serviceB")).foreach { result =>
-          status(result) must equal(OK) // fails with index 404
-          contentAsString(result) must include ("This is serviceB")
-        }
-        route(FakeRequest(GET, "/b/serviceB/lottery")).foreach { result =>
-          status(result) must equal(OK)
-          contentAsString(result) must include ("Your lucky lottery numbers are")
-        }
+    "respond to another valid request" in {
+      route(app, FakeRequest(GET, "/b/serviceB/lottery")).foreach { result =>
+        status(result) must equal(OK) // not sure why this fails with status 404
+        contentAsString(result) must include ("Your lucky lottery numbers are")
+      }}
+
+    "handle invalid requests" in {
+      route(app, FakeRequest(GET, "/boum")) match {
+        case Some(result) => status(result) mustBe NOT_FOUND
+        case None => fail("No response")
       }
     }
   }
