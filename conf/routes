@@ -1,8 +1,7 @@
-
 # Delegate routes to sub-modules
 
 ->  / common.Routes
 
-->  / serviceA.Routes
+->  /a serviceA.Routes
 
-->  / serviceB.Routes
+->  /b serviceB.Routes
