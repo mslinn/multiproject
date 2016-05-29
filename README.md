@@ -1,6 +1,6 @@
-multiproject
-============
+# Modular Play Webapp Using Multiple Projects
 
-A modular Play 2.3.6 application using multi-projects
-
-See our blog post at http://eng.42go.com/multi-project-deployment-in-play-framework for more details.
+Taken from the [Kifi blog post](http://eng.42go.com/multi-project-deployment-in-play-framework), which is dated and needs to be read with discretion.
+This verison corrects errors in the original project.
+Switched the unit tests from Specs2 to ScalaTest; more of them run, but problems remain.
+Pull requests are invited.
