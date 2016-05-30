@@ -1,5 +1,5 @@
 import sbt._
-import Build._
+import CommonSettings._
 
 lazy val root = project.in(file("."))
   .enablePlugins(PlayScala)
