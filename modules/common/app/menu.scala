@@ -1,14 +1,13 @@
 package views
 
 object menu {
-  // The URLs are hard-coded because there is no way to access the combined routing table for the entire app
   override def toString =
-    """<p><a href="/">Home</a> <br/>
-      |Service A: <a href="/a">home</a>
-      |<a href="/a/serviceA">main</a>
-      |<a href="/a/serviceA/Fred">Greet Fred</a><br/>
-      |Service B: <a href="/b/serviceB">main</a>
-      |<a href="/b/serviceB/lottery">lottery</a>
-      |</p>
-      |""".stripMargin
+    s"""<p><a href="${ controllers.common.routes.CommonController.index().url }">Home</a> <br/>
+       |  Service A: <a href="${ controllers.serviceA.routes.ServiceAController.home().url }">home</a>
+       |  <a href="${ controllers.serviceA.routes.ServiceAController.main().url }">main</a>
+       |  <a href="${ controllers.serviceA.routes.ServiceAController.greet("Fred").url }">Greet Fred</a><br/>
+       |  Service B: <a href="${ controllers.serviceB.routes.ServiceBController.main().url }">main</a>
+       |  <a href="${ controllers.serviceB.routes.ServiceBController.lottery().url }">lottery</a>
+       |</p>
+       |""".stripMargin
 }

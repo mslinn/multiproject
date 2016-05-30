@@ -25,31 +25,4 @@ object Build extends Build {
     resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
     libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
   )
-
-  val common = Project("common", file("modules/common"))
-    .enablePlugins(PlayScala)
-    .settings(commonSettings:_*)
-
-  val serviceA = Project("serviceA", file("modules/serviceA"))
-    .enablePlugins(PlayScala)
-    .settings(commonSettings:_*)
-    .dependsOn(common % "test->test; compile->compile")
-    .aggregate(common)
-
-  val serviceB = Project("serviceB", file("modules/serviceB"))
-    .enablePlugins(PlayScala)
-    .settings(commonSettings:_*)
-    .dependsOn(common % "test->test; compile->compile")
-    .aggregate(common)
-
-  // The default SBT project is based on the first project alphabetically. To force sbt to use this one,
-  // we prefix it with 'aaa'
-  val aaaMultiProject = Project("multiproject", file("."))
-    .enablePlugins(PlayScala)
-    .settings(commonSettings:_*)
-    .dependsOn(
-      common   % "test->test; compile->compile",
-      serviceA % "test->test; compile->compile",
-      serviceB % "test->test; compile->compile"
-    ).aggregate(common, serviceA, serviceB)
 }

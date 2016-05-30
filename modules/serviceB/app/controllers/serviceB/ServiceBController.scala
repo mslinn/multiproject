@@ -1,10 +1,12 @@
 package controllers.serviceB
 
+import javax.inject._
 import play.api.mvc._
 import play.twirl.api.Html
 import scala.util.Random
 
-class ServiceBController extends Controller {
+@Singleton
+class ServiceBController @Inject() extends Controller {
   def main = Action {
     Ok(Html(s"This is serviceB! ${ views.menu }"))
   }

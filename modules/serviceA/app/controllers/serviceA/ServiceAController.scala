@@ -1,9 +1,11 @@
 package controllers.serviceA
 
+import javax.inject._
 import play.api.mvc._
 import play.twirl.api.Html
 
-class ServiceAController extends Controller {
+@Singleton
+class ServiceAController @Inject() extends Controller {
   def home = Action {
     Ok(views.html.index(s"Hello from Service A!"))
   }
