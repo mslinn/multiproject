@@ -39,7 +39,6 @@ object CommonSettings extends Build {
     scalacOptions ++= scalaBuildOptions,
     sources in doc in Compile := List(),
     javaOptions in Test += "-Dconfig.resource=common-application.conf",
-    resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
     libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
     logBuffered in Test := false,
     Keys.fork in Test := false,
