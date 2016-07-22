@@ -5,8 +5,8 @@ Heavily modified and updated from the
 which is dated and needs to be read with discretion.
 This version corrects errors in the original project and adds globally available reverse routes and a non-Play intermediate subproject.
 
-The root project just delegates to Service A. ServiceA and ServiceB are Play webapps that each use Google Guice to define modules. 
-ServiceA uses ServiceB.
+The root project just delegates to `ServiceA`. `ServiceA` and `ServiceB` are Play webapps that each use Google Guice to define modules. 
+Unlike the configuration in master, for this git branch `ServiceA` uses `ServiceB`.
 
 Structure is:
 
@@ -16,7 +16,7 @@ Structure is:
       - `nonPlay` subproject (depends on `common`)
   - `common` subproject 
 
-I'd like the root webapp to display a webpage and a menu that allows the user to navigate the entire collecition of webapps.
+I'd like the root webapp to display a webpage and a menu that allows the user to navigate the entire collection of webapps.
 Instead, we get:
 
 ```
