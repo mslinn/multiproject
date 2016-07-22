@@ -17,13 +17,15 @@ lazy val nonPlay: Project = project.in(file("modules/nonPlay"))
   .dependsOn(common)
 
 lazy val serviceA: Project = project.in(file("modules/serviceA"))
+  .settings(libraryDependencies += "net.codingwell" %% "scala-guice" % "4.0.1" withSources())
   .enablePlugins(PlayScala)
   .settings(commonSettings:_*)
-  .dependsOn(nonPlay)
-  .aggregate(common, nonPlay)
+  .dependsOn(serviceB)
+  .aggregate(common, nonPlay, serviceB) // must common & nonPlay be mentioned?
 
 lazy val serviceB: Project = project.in(file("modules/serviceB"))
+  .settings(libraryDependencies += "net.codingwell" %% "scala-guice" % "4.0.1" withSources())
   .enablePlugins(PlayScala)
   .settings(commonSettings:_*)
   .dependsOn(nonPlay)
-  .aggregate(common, nonPlay)
+  .aggregate(common, nonPlay) // must common be mentioned?

@@ -1,14 +1,15 @@
 package controllers.serviceB
 
 import javax.inject._
+import model.ThingB
 import play.api.mvc._
 import play.twirl.api.Html
 import scala.util.Random
 
 @Singleton
-class ServiceBController @Inject() extends Controller {
+class ServiceBController @Inject() (thingB: ThingB) extends Controller {
   def main = Action {
-    Ok(Html(s"This is serviceB! ${ views.menu }"))
+    Ok(Html(s"This is serviceB! ${ thingB.value }  ${ views.menu } "))
   }
 
   def lottery = Action {

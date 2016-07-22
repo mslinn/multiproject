@@ -4,4 +4,5 @@
 GET   /serviceB          controllers.serviceB.ServiceBController.main()
 GET   /serviceB/lottery  controllers.serviceB.ServiceBController.lottery()
 
-->  / common.Routes
+->    /                  common.Routes
+#->    /a                 serviceA.Routes
