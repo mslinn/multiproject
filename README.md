@@ -7,11 +7,11 @@ This version corrects errors in the original project and adds globally available
 
 Structure is:
 
-root webapp (only has application.conf and routes)
-  - serviceA webapp (depends on common)
-  - serviceB webapp (depends on common)
-  - nonPlay subproject (depends on common)
-  - common subproject 
+`root` webapp (only has `application.conf` and `routes`)
+  - `serviceA` webapp (depends on `common`)
+  - `serviceB` webapp (depends on `common`)
+  - `nonPlay` subproject (depends on `common`)
+  - `common` subproject 
 
-root webapp displays a webpage and a menu is displayed that allows the user to navigate the entire collecition of webapps.
+`root` webapp displays a webpage and a menu is displayed that allows the user to navigate the entire collection of webapps.
 
