@@ -1,2 +1,2 @@
 # Common routes that all services respond to.
-GET   /          controllers.common.CommonController.index()
+GET    /         controllers.common.CommonController.index()

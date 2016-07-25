@@ -10,7 +10,7 @@ package object model {
 package model {
   class ThingA @Inject() () {
     // Demonstrates how to access objects in a dependent SBT subproject
-    def value = "Thing A here; accessing ThingB instance: " + injectorB.getInstance(classOf[ThingB]).value
+    def value = "Thing A here; using Guice injector to access ThingB instance: " + injectorB.getInstance(classOf[ThingB]).value
   }
 }
 

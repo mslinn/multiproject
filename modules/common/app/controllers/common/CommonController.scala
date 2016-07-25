@@ -7,6 +7,6 @@ import play.twirl.api.Html
 @Singleton
 class CommonController @Inject() extends Controller {
   def index = Action {
-    Ok(Html(s"Everything is great!  ${ views.menu }"))
+    Ok(Html(s"${ views.menu }Everything is great!"))
   }
 }

@@ -10,15 +10,15 @@ class ServiceAController @Inject() (
   thingA: ThingA,
   thingB: ThingB
 ) extends Controller {
-  def home = Action {
-    Ok(views.html.index(s"Hello from Service A! " + thingA.value + thingB.value))
+  def greet(name: String) = Action {
+    Ok(Html(s"${ views.menuA }Hello $name from Service A!"))
+  }
+
+  def playHelp = Action {
+    Ok(views.html.index(s"Hello from Service A!"))
   }
 
   def main = Action {
-    Ok(Html(s"Only serviceA will respond to this. ${ views.menu }"))
-  }
-
-  def greet(name: String) = Action {
-    Ok(Html(s"Hello $name from Service A! ${ views.menu }"))
+    Ok(Html(s"${ views.menuA }<p>${ thingA.value }</p>"))
   }
 }

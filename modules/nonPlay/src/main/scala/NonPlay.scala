@@ -1,4 +1,6 @@
+/** Demonstrates accessing routes from a non-Play subproject */
 object NonPlay {
-  // shows how to access a route from a non-Play subproject
-  val homeUrl: String = controllers.serviceA.routes.ServiceAController.home().url
+  val indexUrl: String = controllers.common.routes.CommonController.index().url
+  val homeUrl: String = controllers.serviceA.routes.ServiceAController.playHelp().url
+  val lotteryUrl: String = controllers.serviceB.routes.ServiceBController.lottery().url
 }

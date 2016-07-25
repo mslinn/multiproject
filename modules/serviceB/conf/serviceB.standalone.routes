@@ -1,0 +1,12 @@
+# Note that you do not need to prefix routes or controller packages with the service name.
+# Doing so, however, can make code management much easier.
+
+->    /                  common.Routes
+
+# This is the normal way of doing things:
+#->    /serviceB          serviceB.Routes
+#GET   /serviceB          controllers.serviceB.ServiceBController.main()
+#GET   /serviceB/lottery  controllers.serviceB.ServiceBController.lottery()
+
+# Does this work?
+->    /serviceB          serviceB.Routes

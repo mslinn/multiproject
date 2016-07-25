@@ -1,8 +1,8 @@
 package views
 
-object menu {
-  override def toString =
-    s"""<p><b>Main Menu</b></p>
+object menuA {
+  override val toString =
+    s"""<p><b>Service A Menu</b></p>
        |<p><a href="${ controllers.common.routes.CommonController.index().url }">Home</a><br/>
        |
        |  Service A: <a href="${ controllers.serviceA.routes.ServiceAController.playHelp().url }">playHelp</a>
