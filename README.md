@@ -38,7 +38,7 @@ That document is created from `modules/serviceA/app/assets/stylesheets/main.scss
 I commented out the problem files. Uncomment them and you'll see the problems. Any help with solutions would be appreciated.
 
 I wonder, is there any benefit to importing `lib/bootstrap-sass/assets/stylesheets/bootstrap.sass` via `bootstrap-sass`,
-or is importing `lib/bootstrap/css/bootstrap` just as good? I can't get the former to work.`
+or is importing `lib/bootstrap/css/bootstrap` just as good? I can't get the former to work.
 
 ### The problem file works fine with node-sass
 
