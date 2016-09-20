@@ -1,0 +1,27 @@
+{
+  "name": "play25multiproject",
+  "version": "3.0.0",
+  "description": "Test.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "node-sass": "^3.10.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.10.0",
+    "nodemon": "^1.10.2"
+  },
+  "scripts": {
+    "build-css": "node-sass --include-path scss modules/serviceA/app/assets/stylesheets/main.scss   modules/serviceA/public/stylesheets/main3.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mslinn/play25multiproject"
+  },
+  "author": "Mike Slinn",
+  "license": "UNLICENSED",
+  "homepage": ""
+}

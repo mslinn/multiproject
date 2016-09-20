@@ -20,6 +20,8 @@ Structure is:
 The [sbt-sassify](https://github.com/irundaia/sbt-sassify) plugin is mostly working the way I expected. 
 After you run the webapp you will be able to view a combined and minified CSS document at
 [http://localhost:9000/a/assets/stylesheets/main.css](http://localhost:9000/a/assets/stylesheets/main.css).
+
+### One file does not import using sbt-sassify
 That document is created from `modules/serviceA/app/assets/stylesheets/main.scss`. The top of that file starts with:
 
 ```
@@ -37,3 +39,25 @@ I commented out the problem files. Uncomment them and you'll see the problems. A
 
 I wonder, is there any benefit to importing `lib/bootstrap-sass/assets/stylesheets/bootstrap.sass` via `bootstrap-sass`,
 or is importing `lib/bootstrap/css/bootstrap` just as good? I can't get the former to work.`
+
+### The problem file works fine with node-sass
+
+You can install `node-sass` on Ubuntu like this:
+
+    sudo npm install node-sass
+    
+I already created the `package-json` file, so you just need to install the `node-sass` dependencies `nodemon` and `nodemon`.
+The `runNodeSass` script checks to see if these dependencies are installed. 
+If not, and if `npm` is already installed, the script installs the dependencies.
+
+The only way I could figure out to make the script work was to modify the top bit of `main.scss` to read:
+
+```
+//@import "lib/compass-mixins/lib/compass";
+@import "redmond/jquery-ui";
+@import "redmond/jquery.ui.theme";
+//@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "css/bootstrap";
+@import "css/bootstrap-datepicker";
+@import "dropzone";
+```

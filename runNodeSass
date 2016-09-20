@@ -1,0 +1,32 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$DIR"
+
+base=modules/serviceA
+includeLib=$base/target/web/public/main/lib
+
+# scss --watch $base/app/assets/stylesheets/:$base/public/stylesheets/
+
+if [ "$(which npm)" ]; then
+  if [ -d node_modules ]; then
+    sudo npm install -D node-sass nodemon
+    currentuser=$(whoami | awk '{print $1}')}
+    sudo chown -R $currentuser:$currentuser *
+  fi
+else
+  echo "Please install npm"
+  exit -1
+fi
+
+  #--watch \
+  #--recursive \
+node node_modules/node-sass/bin/node-sass \
+  --include-path $includeLib/bootstrap/ \
+  --include-path $includeLib/bootstrap-datepicker/ \
+  --include-path $includeLib/dropzone/ \
+  --include-path $includeLib/jquery-ui/ \
+  --include-path $includeLib/jquery-ui-themes/ \
+  --output css \
+  $base/app/assets/stylesheets/main.scss > $base/public/stylesheets/main.css
+
