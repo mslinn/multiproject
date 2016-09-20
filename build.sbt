@@ -3,17 +3,18 @@ import CommonSettings._
 
 lazy val root = project.in(file("."))
   .enablePlugins(PlayScala)
+  .settings(aggregateReverseRoutes := Seq(common, serviceA, serviceB))
   .settings(commonSettings:_*)
   .settings(webAppSettings:_*)
-  .dependsOn(serviceA, serviceB)
-  .aggregate(common, nonPlay, serviceA, serviceB)
+  .dependsOn(serviceA)
+  .aggregate(serviceA)
 
 lazy val common: Project = project.in(file("modules/common"))
   .enablePlugins(PlayScala)
+  .settings(aggregateReverseRoutes := Seq(serviceA, serviceB))
   .settings(commonSettings:_*)
   .settings(playSubProjectSettings:_*)
   .settings(webAppSettings:_*)
-  .settings(aggregateReverseRoutes := Seq(serviceA, serviceB))
 
 lazy val nonPlay: Project = project.in(file("modules/nonPlay"))
   .settings(commonSettings:_*)
@@ -23,16 +24,18 @@ lazy val nonPlay: Project = project.in(file("modules/nonPlay"))
 
 lazy val serviceA: Project = project.in(file("modules/serviceA"))
   .enablePlugins(PlayScala)
+  .settings(aggregateReverseRoutes := Seq(common, serviceB))
   .settings(commonSettings:_*)
   .settings(playSubProjectSettings:_*)
   .settings(webAppSettings:_*)
   .dependsOn(serviceB)
-  .aggregate(common, nonPlay, serviceB) // must common & nonPlay be mentioned (is common transitive)?
+  .aggregate(serviceB)
 
 lazy val serviceB: Project = project.in(file("modules/serviceB"))
   .enablePlugins(PlayScala)
+  .settings(aggregateReverseRoutes := Seq(common, serviceA))
   .settings(commonSettings:_*)
   .settings(playSubProjectSettings:_*)
   .settings(webAppSettings:_*)
   .dependsOn(nonPlay)
-  .aggregate(common, nonPlay) // must common be mentioned (is common transitive)?
+  .aggregate(nonPlay)

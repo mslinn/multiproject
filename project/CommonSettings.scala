@@ -60,7 +60,17 @@ object CommonSettings {
   val webAppSettings = Seq(
     routesGenerator := play.routes.compiler.InjectedRoutesGenerator,
     javaOptions in Test += "-Dconfig.resource=common.application.conf",
-    libraryDependencies += "net.codingwell" %% "scala-guice" % "4.0.1" withSources(),
-    libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
+    libraryDependencies ++= Seq(
+      "org.webjars"            %  "bootstrap"          % "3.3.7",
+      "org.webjars"            %  "dropzone"           % "4.2.0",
+      "org.webjars"            %  "jquery"             % "2.2.4",
+      "org.webjars"            %  "jquery-cookie"      % "1.4.1-1",
+      "org.webjars"            %  "jquery-ui"          % "1.12.1",
+      "org.webjars"            %  "jquery-ui-themes"   % "1.10.3",
+      "org.webjars.bower"      %  "compass-mixins"     % "1.0.2",
+      //"org.webjars.bower"      %  "bootstrap-sass"     % "3.3.6",
+      "net.codingwell"         %% "scala-guice"        % "4.0.1" withSources(),
+      "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
+    )
   )
 }

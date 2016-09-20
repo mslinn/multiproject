@@ -11,7 +11,7 @@ class ServiceAController @Inject() (
   thingB: ThingB
 ) extends Controller {
   def greet(name: String) = Action {
-    Ok(Html(s"${ views.menuA }Hello $name from Service A!"))
+    Ok(views.html.main("Service A Greeting")(Html(s"${ views.menu }Hello $name from Service A!")))
   }
 
   def playHelp = Action {
@@ -19,6 +19,6 @@ class ServiceAController @Inject() (
   }
 
   def main = Action {
-    Ok(Html(s"${ views.menuA }<p>${ thingA.value }</p>"))
+    Ok(views.html.main("Thing A Value")(Html(s"${ views.menu }<p>${ thingA.value }</p>")))
   }
 }
