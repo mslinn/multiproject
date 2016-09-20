@@ -1,9 +1,9 @@
-//@import "lib/compass-mixins/lib/compass";
+@import "lib/compass-mixins/lib/compass";
 @import "lib/jquery-ui-themes/redmond/jquery-ui";
 @import "lib/jquery-ui-themes/redmond/jquery.ui.theme";
 //@import "lib/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "lib/bootstrap/css/bootstrap";
-//@import "lib/bootstrap-datepicker/css/bootstrap-datepicker"; // don't know why this is not found
+//@import "lib/bootstrap-datepicker/css/bootstrap-datepicker"; // don't know why this is not found or unreadable
 @import "lib/dropzone/dropzone";
 
 @media all {
