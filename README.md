@@ -15,3 +15,22 @@ Structure is:
     - `serviceB webapp (depends on `nonPlay` and `common`)
       - `nonPlay` subproject (depends on `common`)
   - `common` subproject 
+
+## SASS
+The `sbt-sass` plugin is mostly working the way I expected. 
+After you run the webapp you will be able to view a combined and minified CSS document at
+[http://localhost:9000/a/assets/stylesheets/main.css](http://localhost:9000/a/assets/stylesheets/main.css).
+That document is created by `modules/serviceA/app/assets/stylesheets/main.scss`. The top of that file starts with:
+
+```
+//@import "lib/compass-mixins/lib/compass";
+@import "lib/jquery-ui-themes/redmond/jquery-ui";
+@import "lib/jquery-ui-themes/redmond/jquery.ui.theme";
+//@import "lib/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "lib/bootstrap/css/bootstrap";
+//@import "lib/bootstrap-datepicker/css/bootstrap-datepicker"; // don't know why this is not found
+@import "lib/dropzone/dropzone";
+```
+
+... the rest of `main.sccs` is actually a CSS file that I use in another project. It is just here to give SASS something to chew on.
+I commented out the problem files. Uncomment them and you'll see the problems. Any help with solutions would be appreciated.
