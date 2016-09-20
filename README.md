@@ -17,7 +17,7 @@ Structure is:
   - `common` subproject 
 
 ## SASS
-The []sbt-sassify](https://github.com/irundaia/sbt-sassify) plugin is mostly working the way I expected. 
+The [sbt-sassify](https://github.com/irundaia/sbt-sassify) plugin is mostly working the way I expected. 
 After you run the webapp you will be able to view a combined and minified CSS document at
 [http://localhost:9000/a/assets/stylesheets/main.css](http://localhost:9000/a/assets/stylesheets/main.css).
 That document is created from `modules/serviceA/app/assets/stylesheets/main.scss`. The top of that file starts with:
@@ -28,7 +28,7 @@ That document is created from `modules/serviceA/app/assets/stylesheets/main.scss
 @import "lib/jquery-ui-themes/redmond/jquery.ui.theme";
 //@import "lib/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "lib/bootstrap/css/bootstrap";
-@import "lib/bootstrap-datepicker/css/bootstrap-datepicker"; // don't know why this is not found
+//@import "lib/bootstrap-datepicker/css/bootstrap-datepicker"; // don't know why this is not found
 @import "lib/dropzone/dropzone";
 ```
 
