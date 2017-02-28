@@ -6,9 +6,8 @@ import play.api.mvc._
 import play.api.test.Helpers._
 import play.api.test._
 
-class ServiceBSpec extends PlaySpec with Results with OneAppPerSuite {
+class TestServiceB extends PlaySpec with Results with OneAppPerSuite {
   override lazy val app = FakeApplication(new File("./modules/serviceB/"))
-  val controller = new ServiceBController()
 
   "ServiceBSpec" should {
     "respond to valid requests" in {

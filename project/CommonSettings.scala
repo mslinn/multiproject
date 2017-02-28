@@ -47,7 +47,7 @@ object CommonSettings {
 
   // All non-Play subprojects share these settings
   val nonPlaySubProjectSettings = Seq(
-    libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.6" % Test
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % Test
   )
 
   // All Play subprojects share these settings
@@ -61,15 +61,15 @@ object CommonSettings {
     routesGenerator := play.routes.compiler.InjectedRoutesGenerator,
     javaOptions in Test += "-Dconfig.resource=common.application.conf",
     libraryDependencies ++= Seq(
-      "org.webjars"            %  "bootstrap"          % "3.3.7",
+      "org.webjars"            %  "bootstrap"          % "3.3.7-1",
       "org.webjars"            %  "dropzone"           % "4.2.0",
       "org.webjars"            %  "jquery"             % "2.2.4",
       "org.webjars"            %  "jquery-cookie"      % "1.4.1-1",
       "org.webjars"            %  "jquery-ui"          % "1.12.1",
-      "org.webjars"            %  "jquery-ui-themes"   % "1.10.3",
+      "org.webjars"            %  "jquery-ui-themes"   % "1.12.1",
       "org.webjars.bower"      %  "compass-mixins"     % "1.0.2",
-      //"org.webjars.bower"      %  "bootstrap-sass"     % "3.3.6",
-      "net.codingwell"         %% "scala-guice"        % "4.0.1" withSources(),
+      //"org.webjars.bower"      %  "bootstrap-sass"     % "3.3.7",
+      "net.codingwell"         %% "scala-guice"        % "4.1.0" withSources(),
       "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
     )
   )

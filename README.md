@@ -1,5 +1,7 @@
 # Modular Play Webapp Using Multiple Projects
 
+[![Build Status](https://travis-ci.org/mslinn/play25multiproject.svg?branch=master)](https://travis-ci.org/mslinn/play25multiproject)
+
 Heavily modified and updated from the
 [Kifi blog post](http://eng.42go.com/multi-project-deployment-in-play-framework),
 which is dated and needs to be read with discretion.
