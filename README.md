@@ -1,5 +1,7 @@
 # Modular Play Webapp Using Multiple Projects
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Heavily modified and updated from the
 [Kifi blog post](http://eng.42go.com/multi-project-deployment-in-play-framework),
 which is dated and needs to be read with discretion.
